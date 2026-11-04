@@ -12,7 +12,7 @@ The release ZIP contains exactly the BPS patch and README.txt. Supply your own c
 |---|---|---|---|---|
 | **INFILTRATOR** Â· Blue | Swords and close-range positioning | 115% / 72% / 75% | +1 tile | Low starting Guard |
 | **HUNTER** Â· Green | Guns and lasers | 82% / 115% / 82% | Normal | Gun actions add one recovery unit |
-| **JUGGERNAUT** Â· Red | Bombs and a sturdy starting build | 93% / 75% / 112% | âˆ’1 tile | Low starting Charge |
+| **JUGGERNAUT** Â· Red | Bombs and a sturdy starting build | 93% / 75% / 112% | +1 tile | Low starting Charge |
 
 Damage rates apply to normal attacks and RUN programs. Hunter's extra recovery applies once to a gun-containing RUN program and respects the native 12-unit cap; a full gauge stays at 12.
 
