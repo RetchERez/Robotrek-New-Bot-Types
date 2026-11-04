@@ -1,0 +1,24 @@
+# Game ROMs
+*.[sS][fF][cC]
+*.[sS][mM][cC]
+
+# Personal battery saves and emulator states
+*.[sS][rR][mM]
+*.[sS][aA][vV]
+*.mss
+*.zst
+*.zs[0-9]
+*.state
+*.state[0-9]
+
+# Local runtime and editor clutter
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+
+# ROM dumps and backups
+*.[bB][iI][nN]
+*.sfc.*
+*.smc.*

@@ -1,0 +1,50 @@
+R42-R44 DARK SIGNAL BATTERY SAVE CONVERSION
+
+A new game is recommended for the new release. If you want to carry over
+a known R42-R44 Dark Signal save, use the included Python3 converter.
+Do not use this converter on a vanilla save, ROM, savestate or unknown format.
+
+1. Close the emulator and make an untouched backup of the old battery save
+2. Keep CONVERT_R42_R44_SAVE.py and your copied save in a working folder
+3. Run, using your filenames:
+
+   python CONVERT_R42_R44_SAVE.py old.srm new_v1_0.srm
+
+4. Read new_v1_0.srm.conversion.json. It records the original/output hashes,
+   affected logs/mirrors, classes, changed offsets and original skill bytes.
+5. Copy the new file into the emulator's normal save folder, using the new
+   ROM's filename stem. Start the new ROM and use normal Continue.
+
+The input must be an 8192-byte native battery save. Existing input/output
+files are never overwritten. All checksum-valid logs and backup mirrors
+are converted. Invalid or erased logs are left unchanged.
+
+IMPORTANT OLD-VERSION LIMITATION
+R42-R44 class data occupied third-robot skills 3/4, and temporary damage
+data occupied skills 5/6. Some old skill data may already be lost.
+Default conversion resets skills 3-6 AND their names on the third physical
+robot. Reprogram those four skills in-game. Other skills/names, equipment,
+stats, items, GP and story data are retained. Your original backup remains
+available; the converter cannot reconstruct programs already overwritten.
+
+If you have inspected the old data and want to keep those four programs
+exactly as they currently exist, add:
+
+   --keep-third-programs
+
+This also retains their names. You are responsible for checking them in-game.
+
+IF OLD CLASS DATA WAS OVERWRITTEN
+The converter rejects invalid/duplicate class data rather than inventing
+a class. Supply the ORIGINAL class of each physical robot for the affected
+log, in physical creation order rather than its current Arrange order:
+
+   python CONVERT_R42_R44_SAVE.py old.srm new_v1_0.srm --slot-classes 1:INFILTRATOR,HUNTER,JUGGERNAUT
+
+Use UNKNOWN for untyped or unowned robots. Log numbers are 1, 2, 3; repeat the
+option for other logs if needed. This changes identity only and grants no
+stats or items. If you cannot determine the original classes, keep the
+backup and start a new game rather than guessing.
+
+Already-converted class metadata is preserved. Savestates cannot be migrated
+with this tool; use a native battery save made by the old build.
